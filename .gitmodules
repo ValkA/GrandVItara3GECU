@@ -1,0 +1,3 @@
+[submodule "nissutils"]
+	path = nissutils
+	url = https://github.com/fenugrec/nissutils.git
