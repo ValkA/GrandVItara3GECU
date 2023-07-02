@@ -1,3 +1,6 @@
 [submodule "nissutils"]
 	path = nissutils
 	url = https://github.com/fenugrec/nissutils.git
+[submodule "ScoobyRom"]
+	path = ScoobyRom
+	url = https://github.com/dschultzca/ScoobyRom.git
