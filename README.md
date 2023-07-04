@@ -31,3 +31,7 @@ ECU part number is 33921-65J1
 * https://nissanecu.miraheze.org/wiki/Tools
 * https://evoscan.com/tech-articles/#Articles
 * [Get started with IDA and disassembly SH7058](https://www.romraider.com/forum/viewtopic.php?f=25&t=6303)
+* open port logging
+   * http://forums.openecu.org/viewtopic.php?f=57&t=4319
+   * https://www.evoxforums.com/threads/goldenevos-logcfg-txt-for-standalone-logging.68429/post-1229472
+   * 
