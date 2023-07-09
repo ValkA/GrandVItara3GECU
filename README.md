@@ -27,7 +27,9 @@ ECU part number is 33921-65J1
 * Immo disable 
     * http://www.digital-kaos.co.uk/forums/showthread.php/168712-Suzuki-Grand-vitara-with-denso-ECU-finaly-started-by-removing-chip-from-ECU
     * https://forum.carlabimmo.com/viewtopic.php?t=19204
-* Maps change - Use [ScoobyRom](https://github.com/dschultzca/ScoobyRom) to find maps definitons. These can be exported for use in RomRaider.
+* Maps change:
+    * Use [ScoobyRom](https://github.com/dschultzca/ScoobyRom) to find maps definitons. These can be exported for use in RomRaider.
+    * https://diysubaru.org/HowTo/using-scoobyrom
 * https://nissanecu.miraheze.org/wiki/Tools
 * https://evoscan.com/tech-articles/#Articles
 * [Get started with IDA and disassembly SH7058](https://www.romraider.com/forum/viewtopic.php?f=25&t=6303)
@@ -35,3 +37,27 @@ ECU part number is 33921-65J1
    * http://forums.openecu.org/viewtopic.php?f=57&t=4319
    * https://www.evoxforums.com/threads/goldenevos-logcfg-txt-for-standalone-logging.68429/post-1229472
    * 
+* https://netcult.ch/elmue/hud%20ecu%20hacker/
+* https://www.drive2.ru/l/567012375081779941/
+
+## [canable.io](https://canable.io/getting-started.html) via WSL
+
+1. Follow [this](https://www.reddit.com/r/CarHacking/comments/ot3gjf/socketcancanutils_on_windows/) to install can drivers in WSL.
+2. Follow [this](https://github.com/rpasek/usbip-wsl2-instructions/blob/master/README.md#adding-usb-support-to-wsl-linux) to add USB support in WSL.
+3. Do:
+* Windows `sudo usbipd blabla...`
+* WSL:
+```
+sudo usbip attach --remote=172.23.48.1 --busid=2-3
+sudo slcand -o -c -s6 /dev/ttyACM0 can0
+sudo ip link set can0 up
+sudo ip link set can0 txqueuelen 1000
+
+# Dump from CAN
+candump -l can0
+# Play to CAN
+canplayer -I dashboardonoff-2023-6-9_9531.log
+```
+[Cheat sheet 1](https://gist.github.com/malefs/497ffe2afc1d4738cd46c0a7d3ca1b16#socketcan-ip-link---device-configuration-and-dumping-the-stream)
+
+[Cheat sheet 2](https://medium.com/@yogeshojha/car-hacking-101-practical-guide-to-exploiting-can-bus-using-instrument-cluster-simulator-part-ee998570758)
