@@ -21,8 +21,7 @@ ECU part number is 33921-65J1
 2. Open the binary dump
 3. Add SH7058 config from [here](https://github.com/fenugrec/nissutils/blob/master/ghidra_helpers/README.md#using), (use the generic 7058 configs, not the Nissan specific ones).
 4. Put [this manual](https://www.renesas.com/us/en/document/mas/sh-4-software-manual) in
-
-`C:\Users\$USER\Downloads\ghidra_10.3.1_PUBLIC\Ghidra\Processors\SuperH4\data\manuals\rej09b0318_sh_4sm`
+`C:\Users\$USER\Downloads\ghidra_10.3.1_PUBLIC\Ghidra\Processors\SuperH4\data\manuals\rej09b0318_sh_4sm.pdf`
 
 * SH7058 [datasheet](https://www.renesas.com/us/en/products/microcontrollers-microprocessors/other-mcus-mpus/superh-risc-engine-family-mcus/sh7058-32-bit-microcontrollers-non-promotion#overview)
 
