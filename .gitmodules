@@ -4,3 +4,6 @@
 [submodule "ScoobyRom"]
 	path = ScoobyRom
 	url = https://github.com/dschultzca/ScoobyRom.git
+[submodule "Transmission/m16c-flasher"]
+	path = Transmission/m16c-flasher
+	url = https://github.com/truhy/m16c-flasher
