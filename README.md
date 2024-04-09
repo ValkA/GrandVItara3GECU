@@ -2,7 +2,11 @@
 # Suzuki Grand Vitara 3G ECU reverse engineering
 
 ## 2.0L engine (aka JB420)
-ECU part number is 33921-65J1
+1. ECU part number - 33921-65J1
+2. Chip model - 64F7058F80
+3. OS - Ho7058 Operating System, Version 1.0.00.000 by Hitachi
+
+
 <center>
 <img src = "img/top.jpg" height ="200" alt="33921-65J1 top view"/>
 <img src = "img/bottom.jpg" height ="200" alt="33921-65J1 bottom view"/>
