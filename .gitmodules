@@ -1,8 +1,8 @@
 [submodule "nissutils"]
-	path = nissutils
+	path = tools/nissutils
 	url = https://github.com/fenugrec/nissutils.git
 [submodule "ScoobyRom"]
-	path = ScoobyRom
+	path = tools/ScoobyRom
 	url = https://github.com/dschultzca/ScoobyRom.git
 [submodule "Transmission/m16c-flasher"]
 	path = Transmission/m16c-flasher

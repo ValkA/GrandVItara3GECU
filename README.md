@@ -69,3 +69,13 @@ canplayer -I dashboardonoff-2023-6-9_9531.log
 [Cheat sheet 1](https://gist.github.com/malefs/497ffe2afc1d4738cd46c0a7d3ca1b16#socketcan-ip-link---device-configuration-and-dumping-the-stream)
 
 [Cheat sheet 2](https://medium.com/@yogeshojha/car-hacking-101-practical-guide-to-exploiting-can-bus-using-instrument-cluster-simulator-part-ee998570758)
+
+## Connect to an ELM327 from Linux
+
+### Bluetooth
+
+```bash
+hciconfig -a 
+sudo hciconfig hci0 up
+sudo rfcomm bind rfcomm0 AA:BB:CC:11:22:33  # The address of your dongle
+```
