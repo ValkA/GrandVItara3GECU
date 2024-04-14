@@ -48,18 +48,16 @@
 * https://netcult.ch/elmue/hud%20ecu%20hacker/
 * https://www.drive2.ru/l/567012375081779941/
 
-## [canable.io](https://canable.io/getting-started.html) via WSL
+## Can dongles in Linux
+[canable.io](https://canable.io/getting-started.html) or PCAN.
 
-1. Follow [this](https://www.reddit.com/r/CarHacking/comments/ot3gjf/socketcancanutils_on_windows/) to install can drivers in WSL.
-2. Follow [this](https://github.com/rpasek/usbip-wsl2-instructions/blob/master/README.md#adding-usb-support-to-wsl-linux) to add USB support in WSL.
-3. Do:
-* Windows `sudo usbipd blabla...`
-* WSL:
-```
-sudo usbip attach --remote=172.23.48.1 --busid=2-3
+```bash
+# If using SLCAN
 sudo slcand -o -c -s6 /dev/ttyACM0 can0
 sudo ip link set can0 up
 sudo ip link set can0 txqueuelen 1000
+# If using PCAN
+sudo ip link set can0 up type can bitrate 500000
 
 # Dump from CAN
 candump -l can0
@@ -78,4 +76,11 @@ canplayer -I dashboardonoff-2023-6-9_9531.log
 hciconfig -a 
 sudo hciconfig hci0 up
 sudo rfcomm bind rfcomm0 AA:BB:CC:11:22:33  # The address of your dongle
+```
+
+Listen to traffic
+```bash
+sudo socat -v /dev/rfcomm0,raw,echo=0,b38400 SYSTEM:'socat - "PTY,link=/dev/ttyS5,raw,echo=0,waitslave"'
+# or
+sudo socat -dddd /dev/rfcomm0,raw,echo=0 SYSTEM:'tee in.txt | socat - "PTY,link=/dev/ttyS3,raw,echo=0,waitslave" | tee out.txt'
 ```
